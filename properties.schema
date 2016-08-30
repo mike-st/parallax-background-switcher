@@ -1,0 +1,76 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required":false,
+  "properties":{
+    "pluginLocations": {
+      "type":"object",
+      "required":true,
+      "properties":{
+        "config": {
+          "type":"object"
+        },
+        "course": {
+          "type":"object"
+        },
+        "contentobject": {
+          "type":"object",
+          "properties":{
+            "_parallaxbgSwitcher": {
+              "type":"object",
+              "required":true,
+              "legend": "ParallaxbgSwitcher",
+              "properties":{
+                "_isActive": {
+                  "type":"boolean",
+                  "required":true,
+                  "title": "Enabled",
+                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "validators": [],
+                  "help": "Background Switcher block options object"
+                }
+              }
+            }
+          }
+        },
+        "article": {
+          "type":"object"
+        },
+        "block": {
+          "type":"object",
+          "properties":{
+            "_parallaxbgSwitcher": {
+              "type":"object",
+              "required":true,
+              "legend": "ParallaxbgSwitcher",
+              "properties":{
+                "mobileSrc": {
+                  "type":"string",
+                  "required":true,
+                  "title": "Mobile Background Image Select",
+                  "default": "",
+                  "inputType": "Asset:image",
+                  "validators": ["required"],
+                  "help": "This is the background image source used when page is viewed at mobile resolution"
+                },
+                "src": {
+                  "type":"string",
+                  "required":true,
+                  "title": "Background Image Select",
+                  "default": "",
+                  "inputType": "Asset:image",
+                  "validators": ["required"],
+                  "help": "This is the background image source used when page is viewed at desktop resolution"
+                }
+              }
+            }
+          }
+        },
+        "component": {
+          "type":"object"
+        }
+      }
+    }
+  }
+}

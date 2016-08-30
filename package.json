@@ -1,0 +1,23 @@
+{
+  "name": "parallax-background-switcher",
+  "version": "2.0",
+  "description": "A basic feedback overlay for question components",
+  "main": "",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mike-st/parallax-background-switcher.git"
+  },
+  "author": "AdaptLearning",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/mike-st/parallax-background-switcher/issues"
+  },
+  "devDependencies": {
+    "karma": "~0.9",
+    "karma-mocha": "*",
+    "karma-expect": "*"
+  }
+}
