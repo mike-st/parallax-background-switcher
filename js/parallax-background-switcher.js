@@ -50,25 +50,27 @@ define([
 				this.$blockElements[id] = $blockElement;
 
 				var options = blockModel.get('_parallaxbgSwitcher');
-				var thebgoptions = blockModel.get('_bgoptions'); // INSERTED
+				var thebgoptions = this.model.get("_parallaxbgSwitcher")._bgoptions; // INSERTED
 
 	            this.callbacks[id] = _.bind(this.onBlockInview, this);
 
 	            this.$blockElements[id].on("onscreen", this.callbacks[id]);
 
-	            $blockElement.addClass('background-switcher-block');
+	            $blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')'}); //INSERTED
 
-				var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
+	            var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
 				this.$backgroundContainer.prepend($backGround);
 				this.$backgrounds[id] = $backGround;
 
 				$blockElement.find('.block-inner').addClass('background-switcher-block-mobile').css({'background-image': 'url('+options.mobileSrc+')'});
+
 
 			}
 
 			this._activeId = this._firstId;
 			
 			if (thebgoptions === 'animation') { // INSERTED
+				this.$('.background-switcher-block').css({'background-image': 'none'});
                 this.showBackground();
             } else if (thebgoptions === 'parallax') {// INSERTED
                 this.showParallax();// INSERTED
@@ -78,9 +80,17 @@ define([
 
 		setupBackgroundContainer : function() {
 
-			this.$backgroundContainer = $('<div class="background-switcher-container"></div>');
-			this.$el.addClass('background-switcher-active');
-			this.$el.prepend(this.$backgroundContainer);
+			var bgcontaineronoff = this.model.get("_parallaxbgSwitcher")._bgoptions;// INSERTED
+			
+			if (bgcontaineronoff === 'animation') { // INSERTED
+                this.$backgroundContainer = $('<div class="background-switcher-container"></div>');
+				this.$el.addClass('background-switcher-active');
+				this.$el.prepend(this.$backgroundContainer);
+            } else if (bgcontaineronoff === 'parallax') {// INSERTED
+                this.$backgroundContainer = $('<div class="no-switcher"></div>');
+				this.$el.addClass('background-switcher-active');
+				this.$el.prepend(this.$backgroundContainer);
+            }// INSERTED
 
 		},
 		
@@ -123,10 +133,10 @@ define([
 			var blockModel = this._blockModelsIndexed[this._activeId];
 
 			if(Modernizr.csstransitions){
-				this.$backgrounds[this._activeId].addClass('active');
+				this.$backgrounds[this._activeId].removeClass('active');
 			}
 			else {
-				this.$backgrounds[this._activeId].addClass('active');
+				this.$backgrounds[this._activeId].removeClass('active');
 			}
 		},
 
