@@ -56,7 +56,7 @@ define([
 
 	            this.$blockElements[id].on("onscreen", this.callbacks[id]);
 
-	            $blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')'}); //INSERTED
+	            $blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.5)','border-top': '3px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed','background-size': 'cover','min-height': '500px'}); //INSERTED
 
 	            var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
 				this.$backgroundContainer.prepend($backGround);
@@ -70,7 +70,7 @@ define([
 			this._activeId = this._firstId;
 			
 			if (thebgoptions === 'animation') { // INSERTED
-				this.$('.background-switcher-block').css({'background-image': 'none'});
+				this.$('.background-switcher-block').removeAttr( 'style' );
                 this.showBackground();
             } else if (thebgoptions === 'parallax') {// INSERTED
                 this.showParallax();// INSERTED
