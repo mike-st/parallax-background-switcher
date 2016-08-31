@@ -48,12 +48,15 @@ define([
 
 				$blockElement.attr("data-ParallaxbgSwitcher", id);
 				this.$blockElements[id] = $blockElement;
-				this.callbacks[id] = _.bind(this.onBlockInview, this);
-				this.$blockElements[id].on("onscreen", this.callbacks[id]);
-
-				$blockElement.addClass('background-switcher-block');
 
 				var options = blockModel.get('_parallaxbgSwitcher');
+				var thebgoptions = blockModel.get('_bgoptions'); // INSERTED
+
+	            this.callbacks[id] = _.bind(this.onBlockInview, this);
+
+	            this.$blockElements[id].on("onscreen", this.callbacks[id]);
+
+	            $blockElement.addClass('background-switcher-block');
 
 				var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
 				this.$backgroundContainer.prepend($backGround);
@@ -65,7 +68,11 @@ define([
 
 			this._activeId = this._firstId;
 			
-			this.showBackground();
+			if (thebgoptions === 'animation') { // INSERTED
+                this.showBackground();
+            } else if (thebgoptions === 'parallax') {// INSERTED
+                this.showParallax();// INSERTED
+            }// INSERTED
 
 		},
 
@@ -89,7 +96,14 @@ define([
 
 			this._activeId = id;
 
-			this.showBackground();
+            var aniselect = this.model.get("_parallaxbgSwitcher")._bgoptions;// INSERTED
+
+            if (aniselect === 'animation') { // INSERTED
+                this.showBackground();
+            } else if (aniselect === 'parallax') {// INSERTED
+                this.showParallax();// INSERTED
+            }// INSERTED
+
 		},
 
 		showBackground: function() {
@@ -102,6 +116,17 @@ define([
 			else {
 				$('.active').animate({opacity:0}, 1000, function(){ $(this).removeClass('active'); });
 				this.$backgrounds[this._activeId].animate({opacity:1}, 1000, function(){ $(this).addClass('active'); });
+			}
+		},
+
+		showParallax: function() {// INSERTED
+			var blockModel = this._blockModelsIndexed[this._activeId];
+
+			if(Modernizr.csstransitions){
+				this.$backgrounds[this._activeId].addClass('active');
+			}
+			else {
+				this.$backgrounds[this._activeId].addClass('active');
 			}
 		},
 
