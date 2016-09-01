@@ -35,6 +35,7 @@ define([
 			this.$blockElements = {};
 			this.$backgrounds = {};
 			this.callbacks = {};
+			$window = $(window); // Cache the Window object
 
 			for (var i = 0, l = this._blockModels.length; i < l; i++) {
 				var blockModel = this._blockModels[i];				
@@ -51,12 +52,12 @@ define([
 
 				var options = blockModel.get('_parallaxbgSwitcher');
 				var thebgoptions = this.model.get("_parallaxbgSwitcher")._bgoptions; // INSERTED
-
+	            
 	            this.callbacks[id] = _.bind(this.onBlockInview, this);
 
 	            this.$blockElements[id].on("onscreen", this.callbacks[id]);
 
-	            $blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.5)','border-top': '3px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed','background-size': 'cover','min-height': '500px'}); //INSERTED
+	            $blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.5)','border-top': '3px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed'}).attr('data-speed', i*30); //INSERTED
 
 	            var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
 				this.$backgroundContainer.prepend($backGround);
@@ -138,6 +139,23 @@ define([
 			else {
 				this.$backgrounds[this._activeId].removeClass('active');
 			}
+
+			//SCROLLING EFFECT
+			$window = $(window);
+                
+				$('.block').each(function(){
+				 	var $bgobj = $(this); 
+				                
+				  	$(window).scroll(function() {
+										
+					var yPos = -($window.scrollTop() / $bgobj.data('speed')); 
+					
+					var coords = '50% '+ yPos + 'px' ;
+
+					$bgobj.css({ backgroundPosition: coords });
+					
+					}); 
+			 });
 		},
 
 		onRemove: function () {
@@ -164,4 +182,4 @@ define([
 		}
 	});
 
-});
+});	
