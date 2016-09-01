@@ -91,3 +91,13 @@
     
 
 }
+
+// FIXES MOUSE SCROLLING ISSUE TO THE EDGE BROWSER FOR THE THEME 
+  _:-ms-lang(x), _:-webkit-full-screen, html { overflow: hidden; height: 100%; }
+  _:-ms-lang(x), _:-webkit-full-screen, body { overflow: auto; height: 100%; }
+
+// FIXES MOUSE SCROLLING ISSUE TO THE IE BROWSER FOR THE THEME 
+  @media all and (-ms-high-contrast:none) {
+     *::-ms-backdrop, html { overflow: hidden; height: 100%; }
+     *::-ms-backdrop, body { overflow: auto; height: 100%; } 
+  }
