@@ -1,5 +1,5 @@
 //contentObject.json
-    
+//choices are animation or parallax for bgoptions    
 {
     "_id":"co-10",
     "_parentId":"course",
@@ -15,7 +15,7 @@
     "duration":"2 mins",
     "_parallaxbgSwitcher": {
         "_isActive":true,
-        "_bgoptions": "parallax" //choices are animation or parallax
+        "_bgoptions": "parallax"
     }
 }
 
