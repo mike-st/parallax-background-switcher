@@ -3,7 +3,7 @@ parallax-background-switcher
 
 An Adapt extension to switch between block backgrounds as the users scrolls the page using parallax effect
 
-<img src="https://raw.githubusercontent.com/mike-st/parallax-background-switcher/parallax-bg-switcher.png" alt="IMAGE ALT TEXT HERE" width="768" height="432" border="10" />
+<img src="https://raw.githubusercontent.com/mike-st/parallax-background-switcher/master/parallax-bg-switcher.png" alt="IMAGE ALT TEXT HERE" width="768" height="432" border="10" />
 
 Usage
  ------
