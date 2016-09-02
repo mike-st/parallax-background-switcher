@@ -14,7 +14,8 @@
     "linkText":"View",
     "duration":"2 mins",
     "_parallaxbgSwitcher": {
-        "_isActive":true
+        "_isActive":true,
+        "_bgoptions": "parallax" //choices are animation or parallax
     }
 }
 
