@@ -70,12 +70,16 @@ define([
 
 			this._activeId = this._firstId;
 			
-			if (thebgoptions === 'animation') { // INSERTED
-				this.$('.background-switcher-block').removeAttr( 'style' );
+	    if (thebgoptions === 'animation') { // INSERTED
+		this.$('.background-switcher-block').removeAttr( 'style' );
                 this.showBackground();
             } else if (thebgoptions === 'parallax') {// INSERTED
                 this.showParallax();// INSERTED
             }// INSERTED
+
+            _.delay(function() {
+                $(window).resize();
+            }, 250);
 
 		},
 
