@@ -62,6 +62,7 @@
         
         .block.background-switcher-block {
             min-height: inherit;
+            background-attachment: scroll !important;
             
             .background-switcher-block-mobile {
                 
@@ -81,6 +82,10 @@
             }
         }
     }
+
+    @media all and (max-width:1024px){
+        .background-switcher-block {background-attachment: scroll !important;}
+     }
     
     @media all and (min-width:699px) {
         .background-switcher-desktop;   
