@@ -56,7 +56,11 @@ define([
 
 	            this.$blockElements[id].on("onscreen", this.callbacks[id]);
 
-	            $blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.5)','border-top': '3px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed'}); //INSERTED
+	            if (options.src == ""){
+	            	$blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.0)','border-top': '0px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed'}); //INSERTED
+				}else{
+					$blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.5)','border-top': '3px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed'}); //INSERTED
+				}
 
 	            var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
 				this.$backgroundContainer.prepend($backGround);
