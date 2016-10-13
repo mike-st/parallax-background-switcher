@@ -147,11 +147,6 @@ define([
 				this.$backgrounds[this._activeId].removeClass('active');
 			}
 
-			//FIX FOR EDGE AND IE
-			$('html').addClass('parallax-edge-ie');
-			$('body').addClass('fix-parallax-edge-ie');
-
-
 		},
 
 		onRemove: function () {
