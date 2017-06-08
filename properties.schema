@@ -20,7 +20,7 @@
             "_parallaxbgSwitcher": {
               "type":"object",
               "required":true,
-              "legend": "ParallaxbgSwitcher",
+              "legend": "Background Image Switcher",
               "properties":{
                 "_isActive": {
                   "type":"boolean",
@@ -53,7 +53,7 @@
             "_parallaxbgSwitcher": {
               "type":"object",
               "required":false,
-              "legend": "ParallaxbgSwitcher",
+              "legend": "Background Image Switcher",
               "properties":{
                 "mobileSrc": {
                   "type":"string",
