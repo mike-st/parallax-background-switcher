@@ -6,7 +6,7 @@
     "authors": [
       "Michael Stevens <mesgraphix@gmail.com>"
     ],
-    "displayName": "Parallax Background Switcher",
+    "displayName": "Background Image Switcher",
     "extension": "parallaxbgSwitcher",
     "description": "Switches background image as you move through blocks using the Parallax effect",
     "main": "/js/parallax-background-switcher.js",
