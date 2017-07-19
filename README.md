@@ -28,7 +28,7 @@ This is the background image source used when page is viewed at mobile resolutio
 
 ##Limitations
 
-To Be Completed
+<H2><strong>YOU CAN NOT USE THE CGKINEO <a href="https://github.com/cgkineo/adapt-background-switcher" target="_blank">adapt-background-switcher</a> EXTENSION ENABLED TOGETHER IN THE SAME COURSE WITH THE PARALLAX BACKGROUND SWITCHER AS THEY WILL CREATE A CONFLICT</strong></h2>
 
 ##Browser spec
 
