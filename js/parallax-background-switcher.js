@@ -58,18 +58,19 @@ define([
 
 	            if (options.src == ""){
 	            	$blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.0)','border-top': '0px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed'}); //INSERTED
-	            	$('.article-block-slider-enabled .block').removeAttr( 'style' ).removeClass('background-switcher-block');
 		    }else{
 			$blockElement.addClass('background-switcher-block').css({'background-image': 'url('+options.src+')','height': 'auto','width': '100%','position': 'relative','box-shadow': '0px 0px 40px rgba(0,0,0,0.5)','border-top': '3px solid #FFFFFF','background-repeat': 'no-repeat','background-attachment': 'fixed'}); //INSERTED
-			$('.article-block-slider-enabled .block').removeAttr( 'style' ).removeClass('background-switcher-block');
 		    }
 
-	            var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
+	            if ( $('.article').hasClass('article-block-slider-enabled') ) {
+			    $('.article-block-slider-enabled .background-switcher-block').removeAttr( 'style' ).removeAttr( 'data-parallaxbgswitcher' ).removeClass('background-switcher-block');  
+		    } else {
+				var $backGround = $('<div class="background-switcher-background" style="background-image: url('+options.src+');"></div>');
 				this.$backgroundContainer.prepend($backGround);
 				this.$backgrounds[id] = $backGround;
 
 				$blockElement.find('.block-inner').addClass('background-switcher-block-mobile').css({'background-image': 'url('+options.mobileSrc+')'});
-
+		    }
 
 			}
 
