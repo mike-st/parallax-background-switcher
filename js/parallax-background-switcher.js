@@ -147,10 +147,10 @@ define([
 			var blockModel = this._blockModelsIndexed[this._activeId];
 
 			if(Modernizr.csstransitions){
-				this.$backgrounds[this._activeId].removeClass('active');
+				this.$backgrounds[this._activeId];//.removeClass('active');
 			}
 			else {
-				this.$backgrounds[this._activeId].removeClass('active');
+				this.$backgrounds[this._activeId];//.removeClass('active');
 			}
 
 		},
