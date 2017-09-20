@@ -69,7 +69,7 @@ define([
 
 	            if ( $('.article').hasClass('article-block-slider-enabled') ) {
 	            	var myswitcherwidth = $('.background-switcher-block').width();
-	            	$('.article-block-slider-enabled .block').removeAttr( 'style' ).removeAttr( 'data-parallaxbgswitcher' ).removeClass('background-switcher-block').css({'width': myswitcherwidth+'px'});
+	            	$('.article-block-slider-enabled .block').removeAttr( 'data-parallaxbgswitcher' ).removeClass('background-switcher-block').css({'width': myswitcherwidth+'px'});
 			    } else {
 					$blockElement.find('.block-inner').addClass('background-switcher-block-mobile').css({'background-image': 'url('+options.mobileSrc+')'});
 			    }
