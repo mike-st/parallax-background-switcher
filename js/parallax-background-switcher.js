@@ -135,11 +135,11 @@ define([
 
 			if(Modernizr.csstransitions){
 				$('.active').removeClass('active');
-				this.$backgrounds[this._activeId].addClass('active');
+				$(this.$backgrounds[this._activeId]).addClass('active');
 			}
 			else {
 				$('.active').animate({opacity:0}, 1000, function(){ $(this).removeClass('active'); });
-				this.$backgrounds[this._activeId].animate({opacity:1}, 1000, function(){ $(this).addClass('active'); });
+				$(this.$backgrounds[this._activeId]).animate({opacity:1}, 1000, function(){ $(this).addClass('active'); });
 			}
 		},
 
@@ -147,10 +147,10 @@ define([
 			var blockModel = this._blockModelsIndexed[this._activeId];
 
 			if(Modernizr.csstransitions){
-				this.$backgrounds[this._activeId];//.removeClass('active');
+				$(this.$backgrounds[this._activeId]);//.removeClass('active');
 			}
 			else {
-				this.$backgrounds[this._activeId];//.removeClass('active');
+				$(this.$backgrounds[this._activeId]);//.removeClass('active');
 			}
 
 		},
@@ -179,4 +179,4 @@ define([
 		}
 	});
 
-});	
+});
