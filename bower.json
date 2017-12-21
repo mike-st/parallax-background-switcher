@@ -1,8 +1,8 @@
 {
-    "name": "parallax-background-switcher",
+    "name": "adapt-parallax-background-switcher",
     "version": "2.0.1",
     "framework": "^2.0.0",
-    "homepage": "https://github.com/mike-st/parallax-background-switcher",
+    "homepage": "https://github.com/mike-st/adapt-parallax-background-switcher",
     "authors": [
       "Michael Stevens <mesgraphix@gmail.com>"
     ],
