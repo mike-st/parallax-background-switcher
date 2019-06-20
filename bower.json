@@ -1,0 +1,23 @@
+{
+    "name": "parallax-background-switcher",
+    "version": "2.0.1",
+    "framework": ">=2.0.9",
+    "homepage": "https://github.com/mike-st/parallax-background-switcher",
+    "authors": [
+      "Michael Stevens <mesgraphix@gmail.com>"
+    ],
+    "displayName": "Background Image Switcher",
+    "extension": "parallaxbgSwitcher",
+    "description": "Switches background image as you move through blocks using the Parallax effect",
+    "main": "/js/parallax-background-switcher.js",
+    "assetFields": [
+        "_parallaxbgSwitcher.src",
+        "_parallaxbgSwitcher.mobileSrc"
+    ],
+    "keywords": [
+        "adapt-plugin",
+        "adapt-extension"
+    ],
+    "license": "GPL-3.0",
+    "targetAttribute": "_parallaxbgSwitcher"
+}

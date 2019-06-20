@@ -1,0 +1,125 @@
+
+.page.background-switcher-active {
+
+    .page-inner {
+        position: relative;
+    }
+    
+    .background-switcher-desktop {
+        
+        .article {
+            position:relative;
+            background-color: transparent;
+        }
+
+        .block {
+            background-color: @background-color;
+                
+            &.background-switcher-block {
+                background-color: transparent;
+                min-height: 650px;
+                background-size: cover;
+
+                .background-switcher-block-mobile {
+                    background-image: none !important;
+                }
+            }
+            &.background-switcher-block:last-child {
+                box-shadow: none !important;
+
+                .background-switcher-block-mobile:last-child {
+                    box-shadow: none !important;
+                }
+            }
+        }
+        .nth-child-1.block {
+            background-position: center top !important;
+        }
+        
+        .background-switcher-container {
+            
+            .background-switcher-background {
+
+                background-size: cover;
+                background-position: 50% 0;
+                position: fixed;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                top: 50px;                                     
+                opacity: 0;
+                max-width: 100%;
+
+                transition: opacity 1s;
+            }
+
+            .background-switcher-background.active {                
+                opacity:1;
+            }
+        }
+    }
+    
+    .background-switcher-mobile {
+        
+        .background-switcher-background {
+            display:none;
+        }
+        
+        .block.background-switcher-block {
+            min-height: inherit;
+            background-attachment: scroll !important;
+            background: -webkit-linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+            background: -o-linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+            background: -moz-linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+            background: linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+            
+            .background-switcher-block-mobile {
+                
+                background-attachment: scroll !important;
+                background: -webkit-linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+                background: -o-linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+                background: -moz-linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+                background: linear-gradient(#d2d2d2, #EEEEEE, #d2d2d2) !important;
+            }
+        }        
+    }
+    
+    .ie8 & {
+        .background-switcher-desktop;
+        
+        .background-switcher-container {            
+            .background-switcher-background {        
+                max-width: 1024px;
+            }
+        }
+    }
+    
+    @media all and (min-width:699px) {
+        .background-switcher-desktop;   
+    }
+    
+    @media all and (max-width:1024px){
+        .background-switcher-block {
+            background-attachment: scroll !important;
+            background-size: contain !important;
+            background-position: center bottom !important;
+        }
+        .nth-child-1.background-switcher-block {
+            background-position: center bottom !important;
+        }
+    }
+    
+    @media all and (max-width:@device-width-medium){
+        .background-switcher-mobile;
+    }
+    
+
+}
+
+// FIXES MOUSE SCROLLING ISSUE TO THE EDGE BROWSER FOR THE THEME 
+  _:-ms-lang(x), _:-webkit-full-screen, .background-switcher-block {z-index:1 !important;}
+
+// FIXES MOUSE SCROLLING ISSUE TO THE IE BROWSER FOR THE THEME 
+  @media all and (-ms-high-contrast:none) {
+     *::-ms-backdrop, .background-switcher-block {background-attachment: scroll !important;}  
+  }
