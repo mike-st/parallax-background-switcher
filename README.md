@@ -27,8 +27,13 @@ This is the background image source used when page is viewed at desktop resoluti
 This is the background image source used when page is viewed at mobile resolution
 
 ##Limitations
+ 
+<p><strong>DOES NOT WORK WITH FRAMEWORK VERSION 5</strong>. Please go to the Framework 5 version of this component on my other github site...</p>
+[github.com/zarek3333/parallax-background-switcher](https://github.com/zarek3333/parallax-background-switcher)
 
-<H2><strong>YOU CAN NOT USE THE CGKINEO <a href="https://github.com/cgkineo/adapt-background-switcher" target="_blank">adapt-background-switcher</a> EXTENSION ENABLED TOGETHER IN THE SAME COURSE WITH THE PARALLAX BACKGROUND SWITCHER AS THEY WILL CREATE A CONFLICT</strong></h2>
+Use the example.json to see how the Component works.
+
+<strong>YOU CAN NOT USE THE CGKINEO <a href="https://github.com/cgkineo/adapt-background-switcher" target="_blank">adapt-background-switcher</a> EXTENSION ENABLED TOGETHER IN THE SAME COURSE WITH THE PARALLAX BACKGROUND SWITCHER AS THEY WILL CREATE A CONFLICT</strong>
 
 ##Browser spec
 
