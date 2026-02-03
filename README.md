@@ -27,9 +27,6 @@ This is the background image source used when page is viewed at desktop resoluti
 This is the background image source used when page is viewed at mobile resolution
 
 ##Limitations
- 
-<p><strong>DOES NOT WORK WITH FRAMEWORK VERSION 5</strong>. Please go to the Framework 5 version of this component on my other github site...</p>
-[github.com/zarek3333/parallax-background-switcher](https://github.com/zarek3333/parallax-background-switcher)
 
 Use the example.json to see how the Component works.
 
